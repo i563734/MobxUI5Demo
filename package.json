@@ -21,6 +21,7 @@
     "eslint-plugin-fiori-custom": "2.6.7",
     "mobx": "^6.13.0",
     "typescript": "^5.1.6",
+    "ui5-tooling-modules": "^3.7.0",
     "ui5-tooling-transpile": "^3.3.7"
   },
   "scripts": {
