@@ -1,0 +1,105 @@
+{
+  "_version": "1.59.0",
+  "sap.app": {
+    "id": "mobxui5demo",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.14.0",
+      "toolsId": "017a10ee-1ef6-4fd0-935f-732b6e62a188"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.126.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "mobxui5demo.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "mobxui5demo.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "RouteDemo",
+          "pattern": ":?query:",
+          "target": [
+            "TargetDemo"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetDemo": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Demo",
+          "viewName": "Demo"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "mobxui5demo.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}
