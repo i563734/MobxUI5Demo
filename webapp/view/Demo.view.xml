@@ -1,7 +1,52 @@
 <mvc:View controllerName="mobxui5demo.controller.Demo"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
+    xmlns="sap.m" xmlns:f="sap.ui.layout.form">
     <Page id="page" title="{i18n>title}">
-        <content />
+        <content>
+            <Panel id="panel" headerText="Demo Panel" expandable="{= !${device>/system/desktop} }" 
+                    expanded="{device>/system/desktop}" class="sapUiResponsiveMargin sapUiHideOnPhone" width="auto">
+                <f:SimpleForm id="simpleform" layout="ColumnLayout" editable="true">
+                    <f:content>
+                        <Label id="label1" text="Product Name" /><Input id="input1" value="{/newOrder/productName}" />
+                        <Label id="label2" text="Quantity" /><Input id="input2" 
+                            value="{path: '/newOrder/quantity', type: 'sap.ui.model.type.Integer'}" type="Number" />
+                        <Button id="button" press=".onOrderAdd" text="Add Order"/>
+                    </f:content>
+                </f:SimpleForm>
+                <Label id="label4" text="{= 'Total items: ' + ${/total}}" design="Bold"/> 
+            </Panel>
+            <VBox id="vbox1">
+                <Label id="label3" text="Summary by Product" design="Bold"/>
+                <VBox id="vbox2" items="{/summary}">
+                    <Text id="text5" text="{= ' - ' + ${productName} + ': ' + ${quantity}}"/>
+                </VBox>
+            </VBox>
+            <Table id="orderTable" growing="true" growingThreshold="5" headerText="{/headerText}" items="{/orders}">
+                <columns>
+                    <Column id="column1">
+                        <Text id="text1" text="OrderId" />
+                    </Column>
+                    <Column id="column2" demandPopin="true">
+                        <Text id="text2" text="Product"/>
+                    </Column>
+                    <Column id="column3" demandPopin="true">
+                        <Text id="text3" text="Quantity"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="columnlistitem">
+                        <Text id="text4" text="{= 'id: ' + ${id}}"/>
+                        <Input id="input3" value="{productName}" valueLiveUpdate="true"/>
+                        <Input id="input4" value="{
+                        path: 'quantity',
+                        type: 'sap.ui.model.type.Integer'}" 
+                        type="Number"  valueLiveUpdate="true"/>
+                    </ColumnListItem>
+                </items>
+            </Table>
+            <HBox id="hbox1">
+                <Button id="button2" press=".onOrderRemove" text="Remove Last Order"/>
+            </HBox>
+        </content>
     </Page>
 </mvc:View>

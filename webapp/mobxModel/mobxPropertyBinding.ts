@@ -4,6 +4,10 @@ import MobxModel from "./mobxModel";
 import { IReactionDisposer, reaction } from "mobx";
 import ChangeReason from "sap/ui/model/ChangeReason";
 
+/**
+ * @namespace mobxui5demo.mobxModel
+ */
+
 export default class MobxPropertyBinding<T> extends PropertyBinding {
     protected _model: MobxModel<T>;
     protected _path: string;

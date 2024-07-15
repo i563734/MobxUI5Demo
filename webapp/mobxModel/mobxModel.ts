@@ -9,6 +9,10 @@ import MobxListBinding from "./mobxListBinding";
 import Model from "sap/ui/model/Model";
 import MobxContext from "./mobxContext";
 
+/**
+ * @namespace mobxui5demo.mobxModel
+ */
+
 function isNil(value: unknown): boolean {
     return value === null;
 }

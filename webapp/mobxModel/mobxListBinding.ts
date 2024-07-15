@@ -6,6 +6,10 @@ import { IReactionDisposer,  reaction } from "mobx";
 import ChangeReason from "sap/ui/model/ChangeReason";
 import MobxModel from "./mobxModel";
 
+/**
+ * @namespace mobxui5demo.mobxModel
+ */
+
 function isNil(value:unknown): boolean {
     return value === null || value === undefined;
 }

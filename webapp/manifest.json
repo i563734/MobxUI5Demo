@@ -78,15 +78,17 @@
       },
       "routes": [
         {
-          "name": "RouteDemo",
-          "pattern": ":?query:",
+          "name": "demo",
+          "pattern": "",
+          "titleTarget": "",
+          "greedy": false,
           "target": [
-            "TargetDemo"
+            "demo"
           ]
         }
       ],
       "targets": {
-        "TargetDemo": {
+        "demo": {
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
