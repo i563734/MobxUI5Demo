@@ -46,3 +46,5 @@ builder:
           overridesToOverride: true
     - name: ui5-tooling-modules-task
       afterTask: replaceVersion
+      configuration:
+        prependPathMappings: true
