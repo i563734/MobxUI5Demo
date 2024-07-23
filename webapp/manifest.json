@@ -85,6 +85,13 @@
           "target": [
             "demo"
           ]
+        },
+        {
+          "name": "show",
+          "pattern": "show",
+          "titleTarget": "",
+          "greedy": false,
+          "target": ["show"]
         }
       ],
       "targets": {
@@ -94,6 +101,13 @@
           "clearControlAggregation": false,
           "viewId": "Demo",
           "viewName": "Demo"
+        },
+        "show": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Show",
+          "viewName": "Show"
         }
       }
     },

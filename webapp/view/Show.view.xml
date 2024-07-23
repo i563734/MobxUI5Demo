@@ -1,0 +1,32 @@
+<mvc:View controllerName="mobxui5demo.controller.Show"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+
+        <Page id="page" title="BOX OFFICE">
+            <content>
+                <VBox id="vbox1" class="sapUiSmallMargin" alignItems="Center">
+                    <Title id="title" text="BOX OFFICE" level="H1" />
+                    <Text id="text1" text="Are you looking for a movie ?" />
+ 
+                    <HBox id="hbox1" class="sapUiSmallMargin">
+                        <Input id="input" placeholder="Search for something..." value="{/searchText}" />
+                        <Button id="button" text="Search" press=".onSearchShows"  />
+                    </HBox>
+                </VBox>
+                <VBox id="vbox3">                
+                    <HBox id="hbox2" class="sapUiSmallMargin" items="{/showView}" visible="{= ${showView.length}}">
+                        <VBox id="vbox2">
+                            <Image id="img" src="{image}" width="100px" height="150px" />
+                            <HBox id="hbox3" alignItems="Start">
+                            <Label id="label1" text="Title : "></Label><Text id="text2" text="{title}"/>
+                            </HBox>
+                            <HBox id="hbox4">
+                            <Label id="label2" text="Summary : "></Label>
+                            <Text id="text3" text="{summary}" width="10rem"/>
+                            </HBox>
+                        </VBox>                    
+                    </HBox>
+                </VBox>
+            </content>
+    </Page>
+</mvc:View>
